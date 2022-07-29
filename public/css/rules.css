@@ -1,0 +1,9 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body.titles {
+  border: 1px;
+  border-color: rgb(185,177,177);
+}
