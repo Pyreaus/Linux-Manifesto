@@ -9,7 +9,7 @@ server.app.use(express.static('public'));
 
 server.app.put('/test',(req,res) => {res.send(`success ${req.rawHeaders} + ${req.headers['user-agent']}`)});
 server.app.get('/',(req,res) => {res.sendFile(path.join(__dirname+'/static/index.html'))});
-
+server.app.listen(server.port,() => {console.warn(`application listening at: http://localhost:${server.port}`)}); 
               /*  ----- APIs ------  */
 server.app.get('/api/v1/database',(req,res) => {    
   const database = [
@@ -32,4 +32,3 @@ server.app.get('/api/v1/database',(req,res) => {
   res.json(database);
 });
 
-server.app.listen(server.port,() => {console.warn(`application listening at: http://localhost:${server.port}`)}); 
